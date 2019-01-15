@@ -1,0 +1,29 @@
+
+<div class="container">
+<br> <br><br>
+Today is: {{ todayDate | date:'MM/dd/yyyy'}}
+<p>
+  all-list works!
+</p>
+
+<table>
+  <tr *ngFor='let comic of comics'>
+    <td>
+        {{comic.id}}
+    </td>
+    <td>
+        <a href='all/{{comic.id}}'>{{comic.name}}></a>
+    </td>
+    <td>
+        {{comic.description}}
+    </td>
+    <td>
+        <pdf-viewer src="{{ comic.image }}"
+        [show-all]="false"
+        [zoom]="0.25"
+        ></pdf-viewer>
+    </td>
+  </tr>
+
+</table>
+</div>
