@@ -1,0 +1,36 @@
+
+<div class="container">
+    <br> <br><br>
+  <div class="col-md-4 search-div mt-5 mb-2">
+        <mat-form-field>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search" />
+    </mat-form-field>
+  </div>
+    <mdb-card *ngFor="let pfile of files | searchTag: searchText">
+        <mdb-card-body *ngIf='pfile.type == "Unclassified"'>
+          <mdb-card-title>
+            <!-- <h4>{{comic.name}}</h4> -->
+          </mdb-card-title>
+          <div class="row">
+            <div class="col-4">
+                    <a href='all/{{pfile.id}}'>
+                <pdf-viewer src="{{ pfile.filePath }}"
+                    [show-all]="false"
+                    [zoom]="0.25"
+                ></pdf-viewer></a>
+              </div>
+              <div class="col-8">
+                <mdb-card-title><h4>
+                <a href='all/{{pfile.id}}'>{{pfile.name}}</a></h4>
+                </mdb-card-title>
+                <mdb-card-text><strong>Type:</strong> {{pfile.type}}</mdb-card-text>
+                <mdb-card-text><strong>Desscription:</strong> {{pfile.description}}</mdb-card-text>
+                <mdb-card-text><strong>Tags:</strong> {{pfile.tags}}</mdb-card-text>
+                </div>
+            </div>
+            
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+        
+      

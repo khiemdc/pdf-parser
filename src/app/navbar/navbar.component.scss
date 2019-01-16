@@ -1,8 +1,20 @@
 .image-brand {
+  padding: 0 !important;
+  margin: -10px 100px -10px 0px; 
+  /* width: 200px !important; */
+  height: 60px !important;
+} 
+
+.navbar-brand-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.image-brand-right {
     padding: 0 !important;
     margin: -15px 50px -20px 0px; 
     /* width: 200px !important; */
-    height: 80px !important;
+    height: 100px !important;
   } 
 
   img {
@@ -78,6 +90,9 @@
     color:#ffffff;
 }
 
+.upload {
+  margin-right: 30% !important;
+}
 .form-control {
   width: 10em;
 }

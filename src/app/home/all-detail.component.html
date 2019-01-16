@@ -1,0 +1,26 @@
+<br><br><br><br>
+<div class="mb">
+    <mat-form-field>
+        <input #queryInp
+            matInput
+            id="pdfQueryInput"
+            type="text"
+            placeholder="Search in entire pdf"
+            [value]="pdfQuery"
+            (input)="searchQueryChanged($event.target.value)"
+            (keyup.enter)="searchQueryChanged(queryInp.value)"
+        >
+        <!-- <mat-hint>Search in entire pdf</mat-hint> -->
+    </mat-form-field>
+</div>
+<div *ngIf='!file'>Loading...</div>
+<!-- <h2>{{file?.name}}</h2>
+<p>
+  {{ file?.id }} !!!!
+</p>
+<p>
+  {{ file?.description }}
+</p> -->
+<pdf-viewer src="{{ file?.filePath }}"></pdf-viewer>
+
+<!-- <pdf-viewer src="../../assets/pdf/Resume.pdf"></pdf-viewer> -->

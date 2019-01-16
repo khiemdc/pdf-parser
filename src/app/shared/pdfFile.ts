@@ -1,7 +1,7 @@
-export class Comic {
+export class PdfFile {
     public id: string;
     public name: string;
     public description: string;
-    public image: string;
-    public price: number;
+    public filePath: string;
+    public tags: string;
   }

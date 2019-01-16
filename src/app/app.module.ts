@@ -1,29 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { Pipe, PipeTransform } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { UnclassifiedComponent } from './unclassified/unclassified.component';
-import { ClassifiedComponent } from './classified/classified.component';
-import { AllListComponent } from './all/all-list.component';
-import { AllDetailComponent } from './all/all-detail.component';
-import { ComicService } from './service/comic.service';
+import { UnclassifiedComponent } from './home/unclassified.component';
+import { ClassifiedComponent } from './home/classified.component';
+import { AllListComponent } from './home/all-list.component';
+import { AllDetailComponent } from './home/all-detail.component';
+import { PdfFileService } from './service/pdf-file.service';
+import { SearchTagPipe } from './shared/search-tag.pipe';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
    declarations: [
+      SearchTagPipe,
       AppComponent,
       NavbarComponent,
       UnclassifiedComponent,
       ClassifiedComponent,
       AllListComponent,
-      AllDetailComponent
+      AllDetailComponent,
+      UploadComponent
    ],
    imports: [
       BrowserModule,
+      FormsModule,
       HttpClientModule,
       PdfViewerModule,
       AppRoutingModule,
@@ -33,7 +40,7 @@ import { ComicService } from './service/comic.service';
       NO_ERRORS_SCHEMA
    ],
    providers: [
-      ComicService
+      PdfFileService
    ],
    bootstrap: [
       AppComponent

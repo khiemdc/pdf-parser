@@ -1,20 +1,31 @@
 <mdb-navbar
   SideClass="navbar navbar-expand-lg fixed-top navbar-dark unique-color ie-nav" [containerInside]="false">
   <mdb-navbar-brand>
-    <a class="navbar-brand" href="#">
-        <img src="./assets/images/pdf-parser.png" class="image-brand">
+      <a class="navbar-brand" href="http://thebuffalogroup.com/">
+          <img src="./assets/images/TheBuffaloGroup.png" class="image-brand">
+      </a>
+    </mdb-navbar-brand>
+  <mdb-navbar-brand>
+    <a class="navbar-brand-right" href="#">
+        <img src="./assets/images/pdf-parser.png" class="image-brand-right">
     </a>
   </mdb-navbar-brand>
   <links>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item waves-light" mdbWavesEffect>
-        <a class="nav-link">All</a>
+        <a class="nav-link" routerLink="/all">All</a>
       </li>
       <li class="nav-item waves-light" mdbWavesEffect>
-        <a class="nav-link">Unclassified</a>
+        <a class="nav-link" routerLink="/unclassified">Unclassified</a>
       </li>
       <li class="nav-item waves-light" mdbWavesEffect>
-        <a class="nav-link">Classified</a>
+        <a class="nav-link" routerLink="/classified">Classified</a>
+      </li>
+      
+    </ul>
+    <ul class="navbar-nav upload ml-auto">
+    <li class="nav-item waves-light" mdbWavesEffect>
+        <a class="nav-link" routerLink="/upload">Upload</a>
       </li>
     </ul>
     <!-- <form class="form-inline waves-light" mdbWavesEffect>
